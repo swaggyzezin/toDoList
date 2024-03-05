@@ -12,7 +12,7 @@ function updateTask() {
     tasks.forEach((item, id) => {
         newLi = newLi + `
         <li class="task" id="task${id}">
-            <input type="checkbox" name="check" id="check${id}" onclick="check(${id})" ${item.checked ? 'checked' : 'unchecked'}">
+            <input type="checkbox" name="check" id="check${id}" onclick="check(${id})" ${item.checked ? 'checked' : ''}>
             <p>${item.name}</p>
             <img src="img/menu.png" alt="menu" onclick="showMenu(${id})">
         </li>`;
