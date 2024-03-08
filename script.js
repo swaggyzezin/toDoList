@@ -64,7 +64,7 @@ function check(id) {
 
 function loadListOfTasks() {
     const list = localStorage.getItem('listOfTasks');
-    tasks = JSON.parse(list);
+    tasks = list ? JSON.parse(list) : [];
 
     updateTask();
 }
