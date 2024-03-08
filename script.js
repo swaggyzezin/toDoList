@@ -74,18 +74,18 @@ searchButton.addEventListener('click', () => {
         searchValue.style.display = 'block';
     } else {
         searchValue.style.display = 'none';
+        const searchInput = searchValue.value.toLowerCase();
+        tasks.forEach((item, id) => {
+            const taskElement = document.querySelector('#task' + id);
+            if (searchInput === '') {
+                taskElement.style.display = 'flex';
+            } else if (item.name.toLowerCase().includes(searchInput)) {
+                taskElement.style.display = 'flex';
+            } else {
+                taskElement.style.display = 'none';
+            }
+        });
     }
-    const searchInput = searchValue.value.toLowerCase();
-    tasks.forEach((item, id) => {
-        const taskElement = document.querySelector('#task' + id);
-        if (searchInput === '') {
-            taskElement.style.display = 'flex';
-        } else if (item.name.toLowerCase().includes(searchInput)) {
-            taskElement.style.display = 'flex';
-        } else {
-            taskElement.style.display = 'none';
-        }
-    });
 });
 
 addTask.addEventListener('click', () => {
