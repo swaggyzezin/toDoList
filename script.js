@@ -3,7 +3,9 @@ const addTask = document.querySelector('#addTask');
 const taskArea = document.querySelector('.tasksArea');
 const menuArea = document.querySelector('.menu');
 const closeMenuArea = document.querySelector('#closeMenuButton');
-
+const searchButton = document.querySelector('#searchButton');
+const searchValue = document.querySelector('.searchValue');
+searchValue.style.display = 'none';
 
 let tasks = [];
 
@@ -66,6 +68,25 @@ function loadListOfTasks() {
 
     updateTask();
 }
+
+searchButton.addEventListener('click', () => {
+    if (searchValue.style.display === 'none') {
+        searchValue.style.display = 'block';
+    } else {
+        searchValue.style.display = 'none';
+    }
+    const searchInput = searchValue.value.toLowerCase();
+    tasks.forEach((item, id) => {
+        const taskElement = document.querySelector('#task' + id);
+        if (searchInput === '') {
+            taskElement.style.display = 'flex';
+        } else if (item.name.toLowerCase().includes(searchInput)) {
+            taskElement.style.display = 'flex';
+        } else {
+            taskElement.style.display = 'none';
+        }
+    });
+});
 
 addTask.addEventListener('click', () => {
     if (taskName.value != '') {

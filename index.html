@@ -10,21 +10,18 @@
 
 <body>
     <div class="container">
-        <div class="menu">
-            <div class="menuHeader">
-                <h1 id="menuHeaderText"></h1>
-                <p id="closeMenuButton">X</p>
-            </div>
-            <div class="menuBody">
-                <button id="deleteTask" onclick="deleteTaskById(id)">Deletar</button>
-            </div>
-        </div>
+        <div class="menu"></div>
         <div class="addTaskArea">
             <input id="taskName" type="text" placeholder="Quais os seus planos?">
             <img id="addTask" src="img/plus.png" alt="plus sign">
         </div>
-        <ul class="tasksArea">
-        </ul>
+        <ul class="tasksArea"></ul>
+        <div class="searchArea">
+            <input type="text" class="searchValue">
+            <div class="searchButtonArea">
+                <img id="searchButton" src="/img/search.png" alt="searchIcon">
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
